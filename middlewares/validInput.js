@@ -21,4 +21,6 @@ const isValidTime = (time) => {
     return false
 }
   
-module.exports = {validInput}
+module.exports = {
+    validInput
+}
