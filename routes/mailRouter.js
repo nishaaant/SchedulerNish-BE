@@ -4,9 +4,5 @@ const { validation } = require("../middlewares/validation");
 
 const router = express.Router();
 
-router.post("/sendemail" , validation , mailController , async (req , res) => {
-    res.json({
-        message : "Send Email Post Link ran Succesfully!"
-    })
-});
+router.post("/sendemail" , validation , mailController);
 module.exports = {router};

@@ -2,10 +2,11 @@ const { Agenda } = require("@hokify/agenda")
 const { sendMail } = require("./nodeMailer")
 
 
+const { DBURL } = process.env;
 //creating agenda here
 const agenda = new Agenda({
     db : {
-        address : "mongodb+srv://learnnode-username:learnmongodb1@learnnode-cluster.jpymb.mongodb.net/Scheduler-Nish"
+        address : DBURL
     }
 });
 
