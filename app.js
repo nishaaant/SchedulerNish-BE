@@ -11,5 +11,5 @@ app.use(express.json());
 app.use("/",router);
 
 app.listen(1608,()=>{
-    console.log(`App is listening on port ${PORT}`);
+    console.log(`App is listening on port 1608`);
 })
