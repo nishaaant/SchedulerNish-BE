@@ -4,18 +4,31 @@ const cors = require("cors");
 
 
 //importing route
-const {router} = require("./routes/mailRouter")
+const {authRouter} = require("./routes/authRouter")
+const {router} = require("./routes/mailRouter");
+const connectDB = require("./utils/mongoose");
 
 const app = express();
 
-app.use(cors());
+app.use(
+    cors({
+      origin: "http://localhost:5173",
+      credentials: true,
+    })
+  );
 //parsing json data here - data will first enter here
 app.use(express.json());
 
+app.use("/", authRouter)
 app.use("/",router);
 
 const {PORT} = process.env;
 
-app.listen(PORT,()=>{
-    console.log(`App is listening on port ${PORT}`);
+connectDB().then(()=> {
+    console.log("Database connected!!")
+    app.listen(PORT , () => {
+        console.log("Server ran succesfully...");
+    });
+}).catch((err)=> {
+    console.log("Database not connected!!")
 })

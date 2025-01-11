@@ -22,7 +22,7 @@ const sendMail= async ({
     try {
         const mailOptions = {
             from: USER,
-            to:emailAddress,
+            to:"rajput123n@gmail.com",
             subject:subject,
             text:emailBody
         }
