@@ -5,5 +5,5 @@ const {authUser} = require("../utils/auth")
 
 const router = express.Router();
 
-router.post("/sendemail" ,authUser, validation , mailController);
+router.post("/sendemail" , validation , mailController); //add authUser middleware if authentication needed
 module.exports = {router};
